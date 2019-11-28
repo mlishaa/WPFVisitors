@@ -1,0 +1,49 @@
+﻿<Window x:Class="DBDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBDemo"
+        mc:Ignorable="d"
+        Title="ConferenceApp V1.0" Height="450" Width="800">
+    <Grid Margin="10">
+        <!-- first grid column and grid definition-->
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <!-- the right hand side of my window-->
+        <DataGrid x:Name="gridDbData" Grid.Column="1" BorderBrush="DimGray" RowBackground="LightBlue"/>
+        <!-- the left hand side of my window-->
+        <StackPanel>
+            <Button x:Name="btnLoadAllData" Content="Load All Data" Margin="5" Click="BtnLoadAllData_Click"/>
+            <GroupBox Header="Search" Margin="5,20,5,10">
+                <StackPanel>
+                    <TextBlock Text="Search by name"/>
+                    <TextBox x:Name="txtName"/>
+                    <Button x:Name="btnSearchByName" Content="Search" Click="BtnSearchByName_Click"/>
+                    <TextBlock Text="Search by Country" Margin="0,10,0,0"/>
+                    <ComboBox x:Name="cmbCountries" SelectionChanged="CmbCountries_SelectionChanged"/>
+
+                    <TextBlock Text="Search by Date"/>
+                    <StackPanel>
+                        <TextBlock Text="Start"/>
+                        <DatePicker x:Name="txtDate" />
+                        <TextBlock Text="End"/>
+                        <DatePicker x:Name="txtEndDate" />
+    
+                    </StackPanel>
+                    <Button x:Name="btnSearchDate" Content="Search" Click="BtnSearchDate_Click"/>
+                    <TextBlock Text="Search by Major"/>
+                    <TextBox x:Name="txtMajor"/>
+                    <Button x:Name="btnSearchMajor" Content="Search" Click="BtnSearchMajor_Click"/>
+                    
+                    <WrapPanel Margin="10">
+                        <TextBlock Text="Speaker Only"/>
+                        <CheckBox x:Name="chbxSpeaker" Margin="20,0,0,0" Click="ChbxSpeaker_Click"/>
+                    </WrapPanel>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>

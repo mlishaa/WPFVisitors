@@ -1,0 +1,23 @@
+﻿<Window x:Class="DBDemo.Conferences"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DBDemo"
+        mc:Ignorable="d"
+        Title="Conferences" Height="450" Width="400">
+    <StackPanel Margin="10">
+        <GroupBox Header="Add New Conference" Padding="10">
+            <StackPanel>
+            <TextBlock Text="Conference Name" Margin="0,10,0,0"/>
+                <TextBox x:Name="txtConferenceName" />
+                <Button x:Name="btnAddConference" Content="Add conference" Margin="0,10,0,0"/>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Load Conference visitors" Margin="0,10,0,0">
+            <StackPanel>
+                <ComboBox x:Name="cmbLoadVisitorForm" Margin="10"/>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>
