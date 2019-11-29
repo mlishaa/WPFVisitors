@@ -18,3 +18,5 @@ C:\Users\ipd\source\repos\DBDemo\DBDemo\obj\Debug\DBDemo.exe
 C:\Users\ipd\source\repos\DBDemo\DBDemo\obj\Debug\DBDemo.pdb
 C:\Users\ipd\source\repos\DBDemo\DBDemo\obj\Debug\Conferences.g.cs
 C:\Users\ipd\source\repos\DBDemo\DBDemo\obj\Debug\Conferences.baml
+C:\Users\ipd\source\repos\DBDemo\DBDemo\obj\Debug\VisitorWindow.g.cs
+C:\Users\ipd\source\repos\DBDemo\DBDemo\obj\Debug\VisitorWindow.baml

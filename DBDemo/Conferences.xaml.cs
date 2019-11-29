@@ -28,6 +28,7 @@ namespace DBDemo
         {
             InitializeComponent();
             PopulateConferences();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
            // this.SizeToContent = SizeToContent.Height;
         }
 
@@ -56,5 +57,44 @@ namespace DBDemo
 
         }
 
+        private void BtnAddConference_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtConferenceName.Text))
+            {
+                MessageBox.Show("ERROR" + "please enter the conference name");
+            }
+            else { 
+            try
+            {
+                using (SqlConnection con = new SqlConnection(dbConnection))
+                {
+                    string command = @"INSERT INTO Conferences (Name) VALUES ("+@"'"+txtConferenceName.Text+@"')";
+                    SqlCommand cmd = new SqlCommand(command, con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error :" + ex.Message);
+
+            }
+            // repopulate my conference list
+            PopulateConferences();
+            txtConferenceName.Text = "";
+            }
+        }
+
+        private void CmbLoadVisitorForm_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // load all visitors form(Main Window)
+            // the argument has to be h=changed later
+            string conferenceName = (cmbLoadVisitorForm.SelectedItem as DataRow)["Name"].ToString();
+            MessageBox.Show(conferenceName);
+            MainWindow allVisitorsForm = new MainWindow(int.Parse(cmbLoadVisitorForm.SelectedValue.ToString()),conferenceName);
+            allVisitorsForm.Show();
+        }
     }
 }

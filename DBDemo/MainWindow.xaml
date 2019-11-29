@@ -15,7 +15,10 @@
         <!-- the right hand side of my window-->
         <DataGrid x:Name="gridDbData" Grid.Column="1" BorderBrush="DimGray" RowBackground="LightBlue"/>
         <!-- the left hand side of my window-->
-        <StackPanel>
+        <StackPanel> 
+            <Button x:Name="btnAddNewVisitor" Content="Add New Visitor" Margin="5" Click="BtnAddNewVisitor_Click"/>
+            <Button x:Name="btnEditVisitor" Content="Edit Visitor info" Margin="5" Click="BtnEditVisitor_Click"/>
+            <Button x:Name="btnClear" Content="Clear Filter" Click="BtnClear_Click" />
             <Button x:Name="btnLoadAllData" Content="Load All Data" Margin="5" Click="BtnLoadAllData_Click"/>
             <GroupBox Header="Search" Margin="5,20,5,10">
                 <StackPanel>
@@ -41,7 +44,9 @@
                     <WrapPanel Margin="10">
                         <TextBlock Text="Speaker Only"/>
                         <CheckBox x:Name="chbxSpeaker" Margin="20,0,0,0" Click="ChbxSpeaker_Click"/>
+                        
                     </WrapPanel>
+                    
                 </StackPanel>
             </GroupBox>
         </StackPanel>
